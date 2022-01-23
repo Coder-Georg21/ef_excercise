@@ -48,8 +48,8 @@ namespace ef_excercise.ViewModel
             {
                 Invoice inv = new Invoice()
                 {
-                    CustomerName = "Mike",
-                    CustomerAddress = "King's Street 1",
+                    CustomerName = "Juergen",
+                    CustomerAddress = "Ballerstreet 1",
                     Amount = 10000.0,
                     Vat = 10,
                     InvoiceDate = DateTime.Now

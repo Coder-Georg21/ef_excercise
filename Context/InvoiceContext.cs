@@ -11,11 +11,6 @@ namespace ef_excercise.Context
     
     public class InvoiceContext : DbContext
     {
-        public InvoiceContext()
-        {
-            Database.SetInitializer<InvoiceContext>(new InvoiceInitializer());
-        }
-
         public DbSet<Invoice> Invoices { get; set; }
 
     }

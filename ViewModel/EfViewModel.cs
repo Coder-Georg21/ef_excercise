@@ -22,15 +22,17 @@ namespace ef_excercise.ViewModel
 
 
 
+
         }
         public ICommand CreateCommand { get; private set; }
 
-        public List<Invoice> invoice
+        public IList<Invoice> invoice
         {
             get
             {
                 using (InvoiceContext ctx = new InvoiceContext())
                 {
+                    addUser();
                     return (from data in ctx.Invoices select data).ToList();
                 }
 
@@ -50,10 +52,11 @@ namespace ef_excercise.ViewModel
                 {
                     CustomerName = "Juergen",
                     CustomerAddress = "Ballerstreet 1",
-                    Amount = 10000.0,
+                    Amount = 1000,
                     Vat = 10,
                     InvoiceDate = DateTime.Now
                 };
+
 
                 try
                 {

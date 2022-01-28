@@ -38,7 +38,7 @@
             <Button Grid.Column="4" Content="Add"/>
             <Button Grid.Row="1" Grid.Column="4" Content="Delete"/>
 
-            <ListView Grid.Row="2" Grid.ColumnSpan="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="Invoice" ItemsSource="{Binding Path=InvoiceContext.Invoice}">
+            <ListView Grid.Row="2" Grid.ColumnSpan="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="Invoice" ItemsSource="{Binding Path=invoice}">
                 <ListView.View >
                     
                     <GridView>

@@ -80,6 +80,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Context\InvoiceInitializer.cs" />
     <Compile Include="ViewModel\EfViewModel.cs" />
     <Compile Include="ViewModel\RelayCommands.cs" />
     <Compile Include="View\ListView.xaml.cs">

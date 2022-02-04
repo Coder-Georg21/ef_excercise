@@ -25,27 +25,27 @@
                 <RowDefinition Height="8*"/>
             </Grid.RowDefinitions>
 
-            <TextBox Grid.Row="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="2"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="3"></TextBox>
-            
+            <TextBox Grid.Row="1" Text="{Binding Path=InvoiceToAdd.CustomerName}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=InvoiceToAdd.CustomerAddress}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=InvoiceToAdd.Amount}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Path=InvoiceToAdd.Vat}"></TextBox>
+
             <Label Grid.Row="0" Content="Name" Grid.Column="0"></Label>
             <Label Grid.Row="0" Content="Address" Grid.Column="1"></Label>
             <Label Grid.Row="0" Content="Amount" Grid.Column="2"></Label>
-            <Label Grid.Row="0" Content="Date" Grid.Column="3"></Label>
+            <Label Grid.Row="0" Content="Vat" Grid.Column="3"></Label>
 
-            <Button Grid.Column="4" Content="Add"/>
-            <Button Grid.Row="1" Grid.Column="4" Content="Delete"/>
+            <Button Grid.Column="4" Content="Add" Command="{Binding Path=CreateCommand}"/>
+            <Button Grid.Row="1" Grid.Column="4" Content="Delete" Command="{Binding Path=DeleteCommand}" />
 
-            <ListView Grid.Row="2" Grid.ColumnSpan="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="Invoice" ItemsSource="{Binding Path=invoice}">
+            <ListView Grid.Row="2" Grid.ColumnSpan="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="Invoice" ItemsSource="{Binding Path=invoice}" SelectedItem="{Binding Path=InvoiceToDelete}">
                 <ListView.View >
                     
                     <GridView>
                         <GridViewColumn Header="Name" Width="70" DisplayMemberBinding="{Binding Path=CustomerName}"></GridViewColumn>
                         <GridViewColumn Header="Address" Width="70" DisplayMemberBinding="{Binding Path=CustomerAddress}"></GridViewColumn>
                         <GridViewColumn Header="Amount" Width="70" DisplayMemberBinding="{Binding Path=Amount}"></GridViewColumn>
-                        <GridViewColumn Header="Date" Width="70" DisplayMemberBinding="{Binding Path=Date}"></GridViewColumn>
+                        <GridViewColumn Header="Date" Width="70" DisplayMemberBinding="{Binding Path=InvoiceDate}"></GridViewColumn>
                         <GridViewColumn Header="Vat" Width="70" DisplayMemberBinding="{Binding Path=Vat}"></GridViewColumn></GridView>
                 </ListView.View>
             </ListView>

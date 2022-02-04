@@ -24,7 +24,7 @@ namespace ef_excercise.ViewModel
             DeleteCommand = new RelayCommand(e =>
             {
                 deleteInvoice();
-            }, c=> true);
+            }, c=> InvoiceToDelete != null);
 
 
 
@@ -33,7 +33,7 @@ namespace ef_excercise.ViewModel
 
         public Invoice InvoiceToAdd { get; set; } = new Invoice();
 
-        public Invoice InvoiceToDelete { get; set; } = new Invoice();
+        public Invoice InvoiceToDelete { get; set; }
 
         public ICommand CreateCommand { get; private set; }
 
